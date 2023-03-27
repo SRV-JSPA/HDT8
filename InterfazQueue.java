@@ -1,3 +1,3 @@
-public class InterfazQueue {
+public interface interfazQueue <E extends Comparable<E>> {
     
 }
