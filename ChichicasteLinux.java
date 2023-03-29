@@ -5,29 +5,36 @@ public class ChichicasteLinux {
     private String Nusuario;
     private int Nice;
     private int prioridad;
+
+    public ChichicasteLinux(String Nproceso, String Nusuario, int Nice, int prioridad) {
+        this.Nproceso = Nproceso;
+        this.Nusuario = Nusuario;
+        this.Nice = Nice;
+        this.prioridad = prioridad;
+    }
     
     public String getNproceso() {
         return Nproceso;
     }
 
-    public void setNproceso(String nproceso) {
-        Nproceso = nproceso;
+    public void setNproceso(String Nproceso) {
+        this.Nproceso = Nproceso;
     }
 
     public String getNusuario() {
         return Nusuario;
     }
 
-    public void setNusuario(String nusuario) {
-        Nusuario = nusuario;
+    public void setNusuario(String Nusuario) {
+        this.Nusuario = Nusuario;
     }
 
     public int getNice() {
         return Nice;
     }
 
-    public void setNice(int nice) {
-        Nice = nice;
+    public void setNice(int Nice) {
+        this.Nice = Nice;
     }
 
     public int getPrioridad() {
@@ -38,12 +45,7 @@ public class ChichicasteLinux {
         this.prioridad = prioridad;
     }
 
-    public ChichicasteLinux(String nproceso, String nusuario, int nice, int prioridad) {
-        Nproceso = nproceso;
-        Nusuario = nusuario;
-        Nice = nice;
-        this.prioridad = prioridad;
-    }
+    
 
 
 }
