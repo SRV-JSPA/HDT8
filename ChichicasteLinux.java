@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class ChichicasteLinux {
+
     private String Nproceso;
     private String Nusuario;
     private int Nice;
@@ -46,6 +47,7 @@ public class ChichicasteLinux {
     }
 
     
+
 
 
 }
