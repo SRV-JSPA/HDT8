@@ -80,7 +80,7 @@ public class VectorHeap <E extends Comparable<E>> implements iqueue<E>{
     
     
     public E getFirst(){
-        E first = null;
+        E first = null; 
 		
 		if((data.size()) > 0){
 			first = data.get(0);

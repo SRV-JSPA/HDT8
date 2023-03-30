@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ChichicasteLinux {
+public class ChichicasteLinux implements Comparable<ChichicasteLinux>{
 
     private String Nproceso;
     private String Nusuario;
@@ -44,6 +44,19 @@ public class ChichicasteLinux {
 
     public void setPrioridad(int prioridad) {
         this.prioridad = prioridad;
+    }
+
+    @Override
+    public int compareTo(ChichicasteLinux p){
+        int p1 = 20+this.Nice;
+        int p2 = 20+p.getNice();
+        return Integer.compare(p1, p2);
+    }
+
+    @Override
+    public String toString(){
+        int prioridad = 120 + Nice;
+        return Nproceso + "," + Nusuario + "," + Nice + "prioridad" + prioridad;
     }
 
     
