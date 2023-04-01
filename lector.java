@@ -17,5 +17,18 @@ public class lector {
         return num;
     }
 
-  
+    public static void lectorar(){
+        String nFichero = "procesos.txt";
+        BufferedReader br = null;
+
+        try{
+            br = new BufferedReader(new FileReader(nFichero));
+            String txt = br.readLine();
+            while(txt != null){
+                
+            }
+        }catch(){
+
+        }
+    }
 }
