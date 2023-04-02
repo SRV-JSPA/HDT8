@@ -141,7 +141,9 @@ public class VectorHeap <E extends Comparable<E>> implements iqueue<E>{
 		if (data.size() > 1) pushDownRoot(0);
 		return minVal;
     }
-
+    /**
+     * Indica si está vacío o no
+     */
     public boolean isEmpty() {
         return data.isEmpty();
     }

@@ -20,8 +20,6 @@ public class lector {
 
     private ArrayList<ChichicasteLinux> pr = new ArrayList<>();
 
-    
-
     public  void lectorar() throws IOException{
        
         Scanner in = new Scanner("procesos.txt");
