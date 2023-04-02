@@ -142,6 +142,8 @@ public class VectorHeap <E extends Comparable<E>> implements iqueue<E>{
 		return minVal;
     }
 
-
+    public boolean isEmpty() {
+        return data.isEmpty();
+    }
    
 }

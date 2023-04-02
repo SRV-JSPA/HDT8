@@ -24,5 +24,7 @@ public interface iqueue <E extends Comparable<E>> {
      * @param value
      */
     public void add(E value);
+
+    public boolean isEmpty();
 }
 
