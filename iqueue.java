@@ -10,8 +10,20 @@ Curso: Algoritmos y Estructuras de datos
 Sección: 20
 */
 public interface iqueue <E extends Comparable<E>> {
+    /**
+     * Obtiene/retorna el primer valor (valor mínimo de la priority queue) sin eliminarlo
+     * @return
+     */
     public E getFirst();
+    /**
+     * Elimina el primer valor (valor mínimo de la priority queue) sin eliminarlo
+     * @return
+     */
     public E remove();
+    /**
+     * Agrega un valor a la priority queue
+     * @param value
+     */
     public void add(E value);
 }
 
