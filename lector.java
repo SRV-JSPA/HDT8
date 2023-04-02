@@ -18,26 +18,37 @@ import java.io.IOException;
 
 public class lector {
 
+    
     private ArrayList<ChichicasteLinux> pr = new ArrayList<>();
-
-    public  void lectorar() throws IOException{
+    
+    public void lectorar() throws IOException{
        
-        Scanner in = new Scanner("procesos.txt");
-        while(in.hasNextLine()){
-            String proc = in.nextLine();
-            String [] ls =proc.split(",");
-            try{
-                String nproceso = ls[0];
-                String nusuario = ls[1];
-                int nice = Integer.parseInt(ls[2]);
-                int prioridad = 0;
+       File nArchivo=new File("procesos.txt");
+       FileReader reader=new FileReader(nArchivo);
+       BufferedReader lb=new BufferedReader(reader);
 
-                ChichicasteLinux ch = new ChichicasteLinux(nproceso, nusuario, nice, prioridad);
-                pr.add(ch);
-            }catch(NumberFormatException e){
-                System.out.println("Error en el ultimo dato");
-            }   
+       try(lb){
+        String l="";
+        while((l=lb.readLine())!=null){
+            String[] lista=l.split(",");
+            if(lista.length!=3){
+                System.out.println("Error");
+            }
+            String a=lista[0];
+            String b=lista[1];
+            int c=Integer.parseInt(lista[2]);
+            int proceso=0;
+
+            ChichicasteLinux pro=new ChichicasteLinux(b, a, c, proceso);
+            this.pr.add(pro);
+
         }
+
+       }catch(Exception e){
+        System.out.println(e);
+       }
+    
+
             
         
     }
@@ -45,4 +56,5 @@ public class lector {
     public ArrayList<ChichicasteLinux> getPR(){
         return this.pr;
     }
+
 }

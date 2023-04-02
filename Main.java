@@ -8,13 +8,15 @@ Hoja de Trabajo 8
 Curso: Algoritmos y Estructuras de datos
 Sección: 20
 */
+import java.io.IOException;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         lector r = new lector();
+        r.lectorar();
         VectorHeap<ChichicasteLinux> cp = new VectorHeap<ChichicasteLinux>();
-        List<ChichicasteLinux> lp = r.getPR();
+        ArrayList<ChichicasteLinux> lp = r.getPR();
 
         for (ChichicasteLinux chichicasteLinux : lp){
             cp.add(chichicasteLinux);

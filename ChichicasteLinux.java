@@ -72,9 +72,8 @@ public class ChichicasteLinux implements Comparable<ChichicasteLinux>{
      */
     @Override
     public int compareTo(ChichicasteLinux p){
-        int p1 = 20+this.Nice;
-        int p2 = 20+p.getNice();
-        return Integer.compare(p1, p2);
+       
+        return Integer.compare(prioridad, p.prioridad);
     }
     /** 
      * Se crea el toString imprime la cdena para retornar:
@@ -82,7 +81,7 @@ public class ChichicasteLinux implements Comparable<ChichicasteLinux>{
      */
     @Override
     public String toString(){
-        int prioridad = 120 + Nice;
+        
         return Nproceso + "," + Nusuario + "," + Nice + "prioridad" + prioridad;
     }
 
