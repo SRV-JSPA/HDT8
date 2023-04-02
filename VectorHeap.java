@@ -10,16 +10,25 @@ Curso: Algoritmos y Estructuras de datos
 Sección: 20
 */
 import java.util.*;
+/**
+ * En esta clase se implementará la interfaz "iqueue" que nos indica
+ *  la cola en base a la prioridad que se le implementa por medio de Vector
+ */
 
 public class VectorHeap <E extends Comparable<E>> implements iqueue<E>{
-
-
+    /**
+     * Aquí se uso de la clase implementada a partir del libro de Java Structures
+     */
     protected Vector<E> data;
-
+    /**
+     * En "data" se alamcenarán los datos de heap y se contruye un priority queue vacío
+     */
     public VectorHeap(){
         data = new Vector<E>();
+        /**
+         * Se crea un nuevo priority queue a apartir de un Vector con elementos desordenados
+         */
     }
-
     public VectorHeap(Vector<E> v){
         int i;
         data= new Vector<E>(v.size());
@@ -27,18 +36,35 @@ public class VectorHeap <E extends Comparable<E>> implements iqueue<E>{
             add(v.get(i));
         }
     }
-
+        /**
+         * Nos retornará el índice del nodo padre en la posición i
+         * @param i
+         * @return
+         */
     protected static int parent(int i){
         return (i-1)/2;
     }
-
+    /**
+     * Aquí se retorna el índice de su hijo izq. del nodo en posición i
+     * @param i
+     * @return
+     */
     protected static int left(int i){
         return 2*i+1;
     }
-
+    /**
+     * Aquí se retorna el índice de su hijo derecho del nodo en posición i
+     * @param i
+     * @return
+     */
     protected static int right(int i){
         return 2*i+2;
     }
+    /**
+     * Moverá el nodo de posición a la posición "leaf" hacia arriba dentro 
+     * del heap hasta la posición que sea adecuada
+     * @param leaf
+     */
 
     protected void percolateUp(int leaf){
         int parent = parent(leaf);
@@ -50,12 +76,18 @@ public class VectorHeap <E extends Comparable<E>> implements iqueue<E>{
         }
         data.set(leaf, value);
     }
-
+    /**
+     * Esta función agrega el elemento al heap
+     */
     public void add(E value){
         data.add(value);
         percolateUp(data.size()-1);
     }
-
+    /**
+     * Moverá el nodo a la pasición root hacia abajo dentro del heap
+     * hasta la posición que sea adecuada
+     * @param root
+     */
     protected void pushDownRoot(int root)
 	
 	{
@@ -87,9 +119,9 @@ public class VectorHeap <E extends Comparable<E>> implements iqueue<E>{
 			}
 		}
 	}
-    
-    
-    
+    /**
+     * Devuelve el primer elemento del VectorHeap pero sin eliminarlo
+     */
     public E getFirst(){
         E first = null; 
 		
@@ -100,8 +132,9 @@ public class VectorHeap <E extends Comparable<E>> implements iqueue<E>{
 		
 		return first;
     }
-
-    
+    /**
+     * Elimina y retorna el valor más pequeño de la cola de prioridad
+     */
     public E remove (){
         E minVal = getFirst();
 		data.set(0,data.get(data.size()-1));
