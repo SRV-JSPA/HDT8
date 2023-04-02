@@ -22,5 +22,13 @@ public class Main {
         System.out.println("Bienvenido al programa");
         String x = String.format("%-28s %-10s %-10s %-10s\n", " ", "Usuario", "Nice", "Prioridad");
         System.out.println(x);
+
+        while(!cp.isEmpty()){
+            ChichicasteLinux chichicasteLinux = cp.remove();
+            String ordenamiento = String.format(chichicasteLinux.getNproceso(),chichicasteLinux.getNusuario(),chichicasteLinux.getNice(),chichicasteLinux.getPrioridad());
+            System.out.println(ordenamiento);
+        }
     }
+
+    
 }
